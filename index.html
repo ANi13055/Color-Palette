@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <!-- fontawesome icon kit -->
+    <script src="https://kit.fontawesome.com/39408b2951.js" crossorigin="anonymous"></script>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <!-- left section -->
+        <section class="sect-left">
+            <div class="card">
+                <div class="avatar">
+                    <img src="/assets/images/avatar.png" alt="Avatar">
+                </div>
+                <div class="info">
+                    <h1>Aniket Chauhan</h1>
+                    <p>Hey, there. This is simple Color palette generator</p>
+                </div>
+                <ul class="link-list">
+                    <li class="links">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </li>
+                    <li class="links">
+                        <a href="https://www.linkedin.com/in/aniketchauhan21/" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i> LinkedIn
+                        </a>
+                    </li>
+                    <li class="links">
+                        <a href="https://www.instagram.com/_codester__/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- right section -->
+        <section class="sect-right">
+            <div id="toast"></div>
+            <h1>Color palette generator</h1>
+            <div class="color-palettes">
+                <div class="palette" data-clipboard-action="copy" data-clipboard-target="#color1">
+                    <div class="color-box"></div>
+                    <input type="text" value="#ee7752" class="color-code" id="color1" readonly>
+                </div>
+                <div class="palette" data-clipboard-action="copy" data-clipboard-target="#color2">
+                    <div class="color-box"></div>
+                    <input type="text" value="#e73c7e" class="color-code" id="color2" readonly>
+                </div>
+                <div class="palette" data-clipboard-action="copy" data-clipboard-target="#color3">
+                    <div class="color-box"></div>
+                    <input type="text" value="#23a6d5" class="color-code" id="color3" readonly>
+                </div>
+                <div class="palette" data-clipboard-action="copy" data-clipboard-target="#color4">
+                    <div class="color-box"></div>
+                    <input type="text" value="#23d5ab" class="color-code" id="color4" readonly>
+                </div>
+                <div class="palette" data-clipboard-action="copy" data-clipboard-target="#color5">
+                    <div class="color-box"></div>
+                    <input type="text" value="#8a2be2" class="color-code" id="color5" readonly>
+                </div>
+            </div>
+
+            <button class="btn">Generate Palette</button>
+
+            <div class="spacebar-click">Or just press the "Spacebar" to generate new Palettes.</div>
+
+            <div class="copy-color">Click to copy individual color</div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+    <!-- External JS -->
+    <script src="js/app.js" type="text/javascript"></script>
+</body>
+
+</html>
