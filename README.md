@@ -1,1 +1,1 @@
-# Web Development
+# Color Palette Generator
