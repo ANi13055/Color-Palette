@@ -4,273 +4,273 @@ $bgColor: #e8ecf3;
 $btnColor: #7e6cca;
 
 @font-face {
-  src: url("/assets/fonts/Lobster-Regular.ttf");
-  font-family: "Lobster";
+	src: url("/assets/fonts/Lobster-Regular.ttf");
+	font-family: "Lobster";
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 body {
-  background: $bgColor;
-  color: $fontColor;
-  font-family: "Montserrat";
+	background: $bgColor;
+	color: $fontColor;
+	font-family: "Montserrat";
 }
 
 main {
-  display: flex;
-  flex-wrap: row wrap;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-wrap: row wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
 
 // Left section
 .sect-left {
-  width: 30%;
-  height: 100vh;
-  background: linear-gradient(
-    -45deg,
-    #ee7752,
-    #e73c7e,
-    #23a6d5,
-    #23d5ab,
-    #8a2be2
-  );
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+	width: 30%;
+	height: 100vh;
+	background: linear-gradient(
+		-45deg,
+		#ee7752,
+		#e73c7e,
+		#23a6d5,
+		#23d5ab,
+		#8a2be2
+	);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+	@keyframes gradient {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
 
-  .card {
-    position: relative;
-    background: rgba($lightColor, 0.75);
-    width: 300px;
-    height: 350px;
-    border-radius: 10px;
+	.card {
+		position: relative;
+		background: rgba($lightColor, 0.75);
+		width: 300px;
+		height: 350px;
+		border-radius: 10px;
 
-    .avatar {
-      position: absolute;
-      top: 0%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: $fontColor;
+		.avatar {
+			position: absolute;
+			top: 0%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			display: grid;
+			place-items: center;
+			background: $fontColor;
 
-      img {
-        height: 40px;
-        width: 55px;
-        filter: brightness(120%);
-      }
-    }
+			img {
+				height: 40px;
+				width: 55px;
+				filter: brightness(120%);
+			}
+		}
 
-    .info {
-      text-align: center;
-      margin: 80px auto 0;
+		.info {
+			text-align: center;
+			margin: 80px auto 0;
 
-      h1 {
-        font-size: 1.5rem;
-        color: $fontColor;
-      }
+			h1 {
+				font-size: 1.5rem;
+				color: $fontColor;
+			}
 
-      p {
-        margin: 8px 20px 0;
-        font-size: 0.9rem;
-      }
-    }
+			p {
+				margin: 8px 20px 0;
+				font-size: 0.9rem;
+			}
+		}
 
-    .link-list {
-      margin: 30px 0;
-      list-style: none;
+		.link-list {
+			margin: 30px 0;
+			list-style: none;
 
-      .links {
-        background: $lightColor;
-        margin: 0 auto 10px;
-        padding: 8px 0;
-        width: 150px;
-        border-radius: 20px;
-        transition: all 250ms ease-out;
+			.links {
+				background: $lightColor;
+				margin: 0 auto 10px;
+				padding: 8px 0;
+				width: 150px;
+				border-radius: 20px;
+				transition: all 250ms ease-out;
 
-        &:hover {
-          transform: translateY(-5px);
-        }
-        &:active {
-          transform: translateY(0);
-        }
+				&:hover {
+					transform: translateY(-5px);
+				}
+				&:active {
+					transform: translateY(0);
+				}
 
-        a {
-          text-decoration: none;
-          color: $fontColor;
-          font-size: 0.8rem;
-          display: flex;
-          align-items: center;
+				a {
+					text-decoration: none;
+					color: $fontColor;
+					font-size: 0.8rem;
+					display: flex;
+					align-items: center;
 
-          i {
-            margin: 0 15px;
-          }
-        }
-      }
-    }
-  }
+					i {
+						margin: 0 15px;
+					}
+				}
+			}
+		}
+	}
 }
 
 // right section
 .sect-right {
-  position: relative;
-  width: 70%;
+	position: relative;
+	width: 70%;
 
-  // notification toast for copy
-  #toast {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-    background-color: $fontColor;
-    color: $lightColor;
-    font-size: 0.8rem;
-    padding: 10px 15px;
-    border-radius: 20px;
-    text-align: center;
-    z-index: 1;
-    visibility: hidden;
-    opacity: 0;
+	// notification toast for copy
+	#toast {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%);
+		background-color: $fontColor;
+		color: $lightColor;
+		font-size: 0.8rem;
+		padding: 10px 15px;
+		border-radius: 20px;
+		text-align: center;
+		z-index: 1;
+		visibility: hidden;
+		opacity: 0;
 
-    &.show {
-      visibility: visible;
-      animation: fadeInOut 3s ease;
-    }
+		&.show {
+			visibility: visible;
+			animation: fadeInOut 3s ease;
+		}
 
-    @keyframes fadeInOut {
-      5%,
-      95% {
-        opacity: 1;
-        top: 30px;
-      }
-      15%,
-      85% {
-        opacity: 1;
-        top: 10px;
-      }
-    }
-  }
+		@keyframes fadeInOut {
+			5%,
+			95% {
+				opacity: 1;
+				top: 30px;
+			}
+			15%,
+			85% {
+				opacity: 1;
+				top: 10px;
+			}
+		}
+	}
 
-  h1 {
-    margin: 0 0 30px;
-  }
+	h1 {
+		margin: 0 0 30px;
+	}
 
-  .color-palettes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	.color-palettes {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-    .palette {
-      background: $lightColor;
-      margin: 10px 12px;
-      padding: 7px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 250ms ease-in-out;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+		.palette {
+			background: $lightColor;
+			margin: 10px 12px;
+			padding: 7px;
+			border-radius: 10px;
+			cursor: pointer;
+			transition: all 250ms ease-in-out;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 
-      &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 25px 25px -5px #dddddd;
-      }
+			&:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 25px 25px -5px #dddddd;
+			}
 
-      .color-box {
-        width: 120px;
-        height: 180px;
-        border-radius: 5px;
-      }
-      &:nth-child(1) .color-box {
-        background: #ee7752;
-      }
-      &:nth-child(2) .color-box {
-        background: #e73c7e;
-      }
-      &:nth-child(3) .color-box {
-        background: #23a6d5;
-      }
-      &:nth-child(4) .color-box {
-        background: #23d5ab;
-      }
-      &:nth-child(5) .color-box {
-        background: #8a2be2;
-      }
+			.color-box {
+				width: 120px;
+				height: 180px;
+				border-radius: 5px;
+			}
+			&:nth-child(1) .color-box {
+				background: #ee7752;
+			}
+			&:nth-child(2) .color-box {
+				background: #e73c7e;
+			}
+			&:nth-child(3) .color-box {
+				background: #23a6d5;
+			}
+			&:nth-child(4) .color-box {
+				background: #23d5ab;
+			}
+			&:nth-child(5) .color-box {
+				background: #8a2be2;
+			}
 
-      .color-code {
-        margin: 7px 0 0;
-        letter-spacing: 0.5px;
-        font-size: 0.9rem;
-        text-align: center;
-        text-transform: uppercase;
-        width: 100px;
-        appearance: none;
-        outline: none;
-        border: none;
-        font-family: "Montserrat";
-        cursor: pointer;
-      }
-    }
-  }
+			.color-code {
+				margin: 7px 0 0;
+				letter-spacing: 0.5px;
+				font-size: 0.9rem;
+				text-align: center;
+				text-transform: uppercase;
+				width: 100px;
+				appearance: none;
+				outline: none;
+				border: none;
+				font-family: "Montserrat";
+				cursor: pointer;
+			}
+		}
+	}
 
-  .btn {
-    appearance: none;
-    outline: none;
-    border: none;
-    background: $btnColor;
-    color: $lightColor;
-    font-family: "Montserrat";
-    font-size: 0.9rem;
-    width: 250px;
-    height: 50px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 40px 0 20px;
-    transition: all 250ms ease-out;
+	.btn {
+		appearance: none;
+		outline: none;
+		border: none;
+		background: $btnColor;
+		color: $lightColor;
+		font-family: "Montserrat";
+		font-size: 0.9rem;
+		width: 250px;
+		height: 50px;
+		border-radius: 5px;
+		cursor: pointer;
+		margin: 40px 0 20px;
+		transition: all 250ms ease-out;
 
-    &:hover {
-      background: #5f5296;
-    }
-  }
+		&:hover {
+			background: #5f5296;
+		}
+	}
 
-  .spacebar-click {
-    font-weight: 500;
-    margin: 0 0 80px;
-  }
+	.spacebar-click {
+		font-weight: 500;
+		margin: 0 0 80px;
+	}
 
-  .copy-color {
-    background: $lightColor;
-    padding: 10px 30px;
-    border-radius: 20px;
-    font-size: 0.8em;
-    font-weight: 500;
-  }
+	.copy-color {
+		background: $lightColor;
+		padding: 10px 30px;
+		border-radius: 20px;
+		font-size: 0.8em;
+		font-weight: 500;
+	}
 }
