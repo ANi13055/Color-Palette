@@ -17,20 +17,6 @@ body {
   font-family: "Montserrat";
 }
 
-main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: row wrap;
-      flex-wrap: row wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -45,16 +31,59 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   height: 100vh;
 }
 
-.sect-left {
-  width: 30%;
-  height: 100vh;
+.btn-profile {
+  position: fixed;
+  left: 50%;
+  bottom: 1%;
+  -webkit-transform: translate(-50%, -1%);
+          transform: translate(-50%, -1%);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+  background: #ffffff;
+  color: #131c38;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.btn-profile i {
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.btn-profile i.active {
+  -webkit-transform: rotate(540deg);
+          transform: rotate(540deg);
+}
+
+.profile {
+  position: fixed;
+  width: 100%;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  -webkit-transform: translateY(100%) scale(0);
+          transform: translateY(100%) scale(0);
+  opacity: 0;
+  z-index: 99;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #8a2be2);
   background-size: 400% 400%;
   -webkit-animation: gradient 15s ease infinite;
           animation: gradient 15s ease infinite;
+}
+
+.profile.active {
+  -webkit-transform: translateX(0) scale(1);
+          transform: translateX(0) scale(1);
+  opacity: 1;
 }
 
 @-webkit-keyframes gradient {
@@ -81,7 +110,7 @@ section {
   }
 }
 
-.sect-left .card {
+.profile .card {
   position: relative;
   background: rgba(255, 255, 255, 0.75);
   width: 300px;
@@ -89,7 +118,7 @@ section {
   border-radius: 10px;
 }
 
-.sect-left .card .avatar {
+.profile .card .avatar {
   position: absolute;
   top: 0%;
   left: 50%;
@@ -104,34 +133,34 @@ section {
   background: #131c38;
 }
 
-.sect-left .card .avatar img {
+.profile .card .avatar img {
   height: 40px;
   width: 55px;
   -webkit-filter: brightness(120%);
           filter: brightness(120%);
 }
 
-.sect-left .card .info {
+.profile .card .info {
   text-align: center;
   margin: 80px auto 0;
 }
 
-.sect-left .card .info h1 {
+.profile .card .info h1 {
   font-size: 1.5rem;
   color: #131c38;
 }
 
-.sect-left .card .info p {
+.profile .card .info p {
   margin: 8px 20px 0;
   font-size: 0.9rem;
 }
 
-.sect-left .card .link-list {
+.profile .card .link-list {
   margin: 30px 0;
   list-style: none;
 }
 
-.sect-left .card .link-list .links {
+.profile .card .link-list .links {
   background: #ffffff;
   margin: 0 auto 10px;
   padding: 8px 0;
@@ -141,17 +170,17 @@ section {
   transition: all 250ms ease-out;
 }
 
-.sect-left .card .link-list .links:hover {
+.profile .card .link-list .links:hover {
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
 }
 
-.sect-left .card .link-list .links:active {
+.profile .card .link-list .links:active {
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 
-.sect-left .card .link-list .links a {
+.profile .card .link-list .links a {
   text-decoration: none;
   color: #131c38;
   font-size: 0.8rem;
@@ -163,16 +192,11 @@ section {
           align-items: center;
 }
 
-.sect-left .card .link-list .links a i {
+.profile .card .link-list .links a i {
   margin: 0 15px;
 }
 
-.sect-right {
-  position: relative;
-  width: 70%;
-}
-
-.sect-right #toast {
+.palette-generator #toast {
   position: absolute;
   top: 0;
   left: 50%;
@@ -189,7 +213,13 @@ section {
   opacity: 0;
 }
 
-.sect-right #toast.show {
+@media screen and (max-width: 360px) {
+  .palette-generator #toast {
+    width: 70%;
+  }
+}
+
+.palette-generator #toast.show {
   visibility: visible;
   -webkit-animation: fadeInOut 3s ease;
           animation: fadeInOut 3s ease;
@@ -221,30 +251,36 @@ section {
   }
 }
 
-.sect-right h1 {
+.palette-generator h1 {
   margin: 0 0 30px;
 }
 
-.sect-right .color-palettes {
+.palette-generator .color-palettes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.sect-right .color-palettes .palette {
-  background: #ffffff;
-  margin: 10px 12px;
-  padding: 7px;
-  border-radius: 10px;
-  cursor: pointer;
-  -webkit-transition: all 250ms ease-in-out;
-  transition: all 250ms ease-in-out;
+@media screen and (max-width: 360px) {
+  .palette-generator .color-palettes {
+    width: 360px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+}
+
+.palette-generator .color-palettes .palette {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -252,51 +288,61 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #ffffff;
+  margin: 10px 12px;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  width: 140px;
 }
 
-.sect-right .color-palettes .palette:hover {
+.palette-generator .color-palettes .palette:hover {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
   -webkit-box-shadow: 0 25px 25px -5px #dddddd;
           box-shadow: 0 25px 25px -5px #dddddd;
 }
 
-.sect-right .color-palettes .palette .color-box {
+.palette-generator .color-palettes .palette .color-box {
   width: 120px;
   height: 180px;
   border-radius: 5px;
 }
 
-.sect-right .color-palettes .palette:nth-child(1) .color-box {
+.palette-generator .color-palettes .palette:nth-child(1) .color-box {
   background: #ee7752;
 }
 
-.sect-right .color-palettes .palette:nth-child(2) .color-box {
+.palette-generator .color-palettes .palette:nth-child(2) .color-box {
   background: #e73c7e;
 }
 
-.sect-right .color-palettes .palette:nth-child(3) .color-box {
+.palette-generator .color-palettes .palette:nth-child(3) .color-box {
   background: #23a6d5;
 }
 
-.sect-right .color-palettes .palette:nth-child(4) .color-box {
+.palette-generator .color-palettes .palette:nth-child(4) .color-box {
   background: #23d5ab;
 }
 
-.sect-right .color-palettes .palette:nth-child(5) .color-box {
+.palette-generator .color-palettes .palette:nth-child(5) .color-box {
   background: #8a2be2;
 }
 
-.sect-right .color-palettes .palette .color-code {
+.palette-generator .color-palettes .palette .color-code {
   margin: 7px 0 0;
   letter-spacing: 0.5px;
   font-size: 0.9rem;
   text-align: center;
   text-transform: uppercase;
-  width: 100px;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -304,9 +350,10 @@ section {
   border: none;
   font-family: "Montserrat";
   cursor: pointer;
+  width: 100%;
 }
 
-.sect-right .btn {
+.palette-generator .btn {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -325,16 +372,17 @@ section {
   transition: all 250ms ease-out;
 }
 
-.sect-right .btn:hover {
+.palette-generator .btn:hover {
   background: #5f5296;
 }
 
-.sect-right .spacebar-click {
+.palette-generator .spacebar-click {
   font-weight: 500;
-  margin: 0 0 80px;
+  margin: 0 0 50px;
+  text-align: center;
 }
 
-.sect-right .copy-color {
+.palette-generator .copy-color {
   background: #ffffff;
   padding: 10px 30px;
   border-radius: 20px;

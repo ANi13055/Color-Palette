@@ -21,25 +21,59 @@ body {
 	font-family: "Montserrat";
 }
 
-main {
+// mixin function
+@mixin flex($direction, $justify, $align) {
 	display: flex;
-	flex-wrap: row wrap;
-	justify-content: center;
-	align-items: center;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
 }
 
 section {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	@include flex(column, center, center);
+	position: relative;
 	height: 100vh;
 }
 
-// Left section
-.sect-left {
-	width: 30%;
-	height: 100vh;
+// profile btn
+.btn-profile {
+	position: fixed;
+	left: 50%;
+	bottom: 1%;
+	transform: translate(-50%, -1%);
+	appearance: none;
+	outline: none;
+	border: none;
+	background: $lightColor;
+	color: $fontColor;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 999;
+
+	i {
+		transition: all 500ms ease-in-out;
+		&.active {
+			transform: rotate(540deg);
+		}
+	}
+}
+
+// profile section
+.profile {
+	position: fixed;
+	width: 100%;
+	transition: all 500ms ease-in-out;
+	transform: translateY(100%) scale(0);
+	opacity: 0;
+	z-index: 99;
+
+	&.active {
+		transform: translateX(0) scale(1);
+		opacity: 1;
+	}
+
 	background: linear-gradient(
 		-45deg,
 		#ee7752,
@@ -139,11 +173,8 @@ section {
 	}
 }
 
-// right section
-.sect-right {
-	position: relative;
-	width: 70%;
-
+// paletter generator
+.palette-generator {
 	// notification toast for copy
 	#toast {
 		position: absolute;
@@ -159,6 +190,10 @@ section {
 		z-index: 1;
 		visibility: hidden;
 		opacity: 0;
+
+		@media screen and (max-width: 360px) {
+			width: 70%;
+		}
 
 		&.show {
 			visibility: visible;
@@ -184,20 +219,24 @@ section {
 	}
 
 	.color-palettes {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include flex(row, start, center);
+
+		@media screen and (max-width: 360px) {
+			width: 360px;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			white-space: nowrap;
+		}
 
 		.palette {
+			@include flex(column, center, center);
 			background: $lightColor;
 			margin: 10px 12px;
 			padding: 7px;
 			border-radius: 10px;
 			cursor: pointer;
 			transition: all 250ms ease-in-out;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
+			width: 140px;
 
 			&:hover {
 				transform: translateY(-10px);
@@ -231,12 +270,12 @@ section {
 				font-size: 0.9rem;
 				text-align: center;
 				text-transform: uppercase;
-				width: 100px;
 				appearance: none;
 				outline: none;
 				border: none;
 				font-family: "Montserrat";
 				cursor: pointer;
+				width: 100%;
 			}
 		}
 	}
@@ -263,7 +302,8 @@ section {
 
 	.spacebar-click {
 		font-weight: 500;
-		margin: 0 0 80px;
+		margin: 0 0 50px;
+		text-align: center;
 	}
 
 	.copy-color {
