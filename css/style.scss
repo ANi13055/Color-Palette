@@ -170,6 +170,9 @@ section {
 
 // paletter generator
 .palette-generator {
+	justify-content: unset;
+	padding: 2rem 0;
+
 	// notification toast for copy
 	#toast {
 		position: absolute;
@@ -232,6 +235,10 @@ section {
 			cursor: pointer;
 			transition: all 250ms ease-in-out;
 			width: 140px;
+
+			&:first-child {
+				margin-left: 0;
+			}
 
 			&:hover {
 				transform: translateY(-10px);

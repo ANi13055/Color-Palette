@@ -191,6 +191,13 @@ section {
   margin: 0 15px;
 }
 
+.palette-generator {
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  padding: 2rem 0;
+}
+
 .palette-generator #toast {
   position: absolute;
   top: 0;
@@ -297,6 +304,10 @@ section {
   -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
   width: 140px;
+}
+
+.palette-generator .color-palettes .palette:first-child {
+  margin-left: 0;
 }
 
 .palette-generator .color-palettes .palette:hover {
