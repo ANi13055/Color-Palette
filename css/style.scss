@@ -3,11 +3,6 @@ $fontColor: #131c38;
 $bgColor: #e8ecf3;
 $btnColor: #7e6cca;
 
-@font-face {
-	src: url("/assets/fonts/Lobster-Regular.ttf");
-	font-family: "Lobster";
-}
-
 * {
 	margin: 0;
 	padding: 0;
@@ -18,7 +13,7 @@ $btnColor: #7e6cca;
 body {
 	background: $bgColor;
 	color: $fontColor;
-	font-family: "Montserrat";
+	font-family: "Montserrat", sans-serif;
 }
 
 // mixin function
